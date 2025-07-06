@@ -28,14 +28,10 @@ def blackJack():
 
         if decesion == "y":
             playerCards.append(getcard())
-            print(f"Your cards: {playerCards}, current score: {sum(playerCards)} ")
-            print(f"Computer's first card: {computerCards[0]}\n")
             if sum(playerCards) > 21:
                 if 11 in playerCards:
                    index11 = playerCards.index(11)
                    playerCards[index11] = 1
-                   print(f"Your cards: {playerCards}, current score: {sum(playerCards)} ")
-                   print(f"Computer's first card: {computerCards[0]}\n")
                 else:
                     gameController = False
 
@@ -46,13 +42,17 @@ def blackJack():
                 computerCards.append(getcard())
                 print(f"Your cards: {playerCards}, current score: {sum(playerCards)} ")
                 print(f"Computer's cards: {computerCards},computer score: {sum(computerCards)}\n")
-            gameController = False
+            break
 
         else:
             print("You type wrong letter try again\n")
 
+        print(f"Your cards: {playerCards}, current score: {sum(playerCards)} ")
+        print(f"Computer's first card: {computerCards[0]}\n")
+
     print(f"Your final hand: {playerCards}, final score: {sum(playerCards)} ")
     print(f"Computer's final hand: {computerCards},final score: {sum(computerCards)}\n")
+
     if sum(playerCards) > 21:
         print("You went over, you lose :)")
     elif sum(playerCards) < sum(computerCards):
