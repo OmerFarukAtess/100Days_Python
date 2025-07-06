@@ -39,14 +39,9 @@ def guessNumber():
                 print("To high\n"
                       "You run out of guesses, you lose.\n"
                       f"Correct number is {number}")
-            print("To high.\n"
-                  "Guess again.\n")
-
-
-
-
-
-
+            else:
+                print("To high.\n"
+                      "Guess again.\n")
 
 
 guessNumber()
